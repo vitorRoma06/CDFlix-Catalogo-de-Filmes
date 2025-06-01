@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDFlix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="d-flex flex-column">
+    <header class="cabecalho d-flex align-items-center justify-content-between w-100 position-fixed">
+        <div class="start-cabecalho d-flex align-items-center">
+            <a href="index.html" class="logo-cabecalho text-decoration-none">
+                <img src="assets/img/CDFLIX.png" alt="logo">
+            </a>
+            <nav class="menu">
+                <input type="checkbox" id="menuToggle">
+                <label for="menuToggle" class="menu-icon"><i class="fa fa-bars"></i><i
+                        class="fa fa-times-circle"></i></label>
+                <ul class="d-flex m-0 p-0">
+                    <li class="active"><a href="index.html">Início</a></li>
+                    <li><a href="#">Filmes</a></li>
+                    <li><a href="#">Minha Lista</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="end-cabecalho d-flex align-items-center">
+            <form class="busca d-flex flex-nowrap">
+                <input type="search" placeholder="Títulos, gêneros..." class="w-100">
+                <button type="submit"><i class="fa fa-search"></i>
+                </button>
+            </form>
+            <div class="login-cadastro d-flex">
+                <a href="#">Login</a>
+                <a href="#">Cadastre-se</a>
+            </div>
+        </div>
+
+    </header>
+    <main class="main">
+        <div class="container banner pb-3">
+            <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads">
+                <div class="carousel-indicators">
+                    <button class="active" data-bs-target="#ads" data-bs-slide-to="0"></button>
+                    <button class="" data-bs-target="#ads" data-bs-slide-to="1"></button>
+                    <button class="" data-bs-target="#ads" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/banner-principal.png" alt="" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block mb-3">
+                            <h1>Seu catálogo de filmes, do clássico ao lançamento.</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/banner1.jpg" alt="" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block mb-3">
+                            <h1>Clube da Luta - Primeira regra: você não fala sobre o Clube da Luta.</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/banner5.jpg" alt="" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block mb-3">
+                            <h1>Deadpool 2 - Mais ação, mais humor, mais caos – tudo na medida certa.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="filmes d-flex flex-column">
+            <h1>Filmes</h1>
+
+            <section class="container-filmes d-flex flex-column">
+                <h2>Ação</h2>
+                <div id="categoria-acao" class="categoria-filmes d-flex justify-content-evenly"></div>
+            </section>
+            <section class="container-filmes d-flex flex-column">
+                <h2>Brasil: Top 10 filmes hoje</h2>
+                <div id="top10-filmes"
+                    class="top10-filmes d-flex align-items-center justify-content-evenly flex-nowrap"></div>
+            </section>
+            <section class="container-filmes d-flex flex-column">
+                <h2>Aventura</h2>
+                <div id="categoria-aventura" class="categoria-filmes d-flex justify-content-evenly flex-nowrap"></div>
+            </section>
+        </section>
+    </main>
+    <footer class="rodape d-flex flex-column gap-5">
+        <div class="container-rodape d-flex flex-column flex-md-row align-items-center">
+            <img src="assets/img/CDFLIX.png" alt="">
+            <div class="conteudo-rodape d-flex justify-content-between flex-column">
+                <div class="redes-sociais d-flex">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <nav class="menu-rodape">
+                    <ul class="d-flex p-0 flex-column">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                    </ul>
+
+                </nav>
+                
+            </div>
+            <div class="autoria h-100">
+                <h5 class="pb-1">Autoria</h5>
+                <p>Aluno: <span class="fw-normal">Vitor de Roma Honório</span></p>
+                <p>Curso: <span class="fw-normal">Engenharia de Software</span></p>
+                <p>Turma: <span class="fw-normal">Noite</span></p>
+            </div>
+            
+
+        </div>
+        <div class="copyright text-center">
+                    <p>&copy; 2025 CDFlix. Todos os direitos reservados</p>
+                </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="assets/scripts/app.js"></script>
+</body>
+
+</html>

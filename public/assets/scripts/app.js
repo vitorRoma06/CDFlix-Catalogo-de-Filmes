@@ -189,9 +189,63 @@ function popularTabelaFilmes(filmes) {
     });
 }
 
+function montarCarouselDinamico(filmesParaCarousel) {
+    const carouselIndicators = document.querySelector('.carousel-indicators');
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    if (!carouselIndicators || !carouselInner) {
+        console.warn("Elementos do carrossel não encontrados para a montagem dinâmica.");
+        return;
+    }
+
+    carouselIndicators.innerHTML = '';
+    carouselInner.innerHTML = '';
+
+    filmesParaCarousel.forEach((filme, index) => {
+        const indicator = document.createElement('button');
+        indicator.setAttribute('data-bs-target', '#ads');
+        indicator.setAttribute('data-bs-slide-to', index.toString());
+        if (index === 0) {
+            indicator.classList.add('active');
+            indicator.setAttribute('aria-current', 'true');
+        }
+        carouselIndicators.appendChild(indicator);
+
+        const carouselItem = document.createElement('div');
+        carouselItem.classList.add('carousel-item');
+        if (index === 0) {
+            carouselItem.classList.add('active');
+        }
+
+         const link = document.createElement('a');
+        link.href = `detalhes.html?id=${filme.id}`;
+
+        const img = document.createElement('img');
+        img.src = filme.fotos && filme.fotos.length > 0 ? filme.fotos[0] : filme.imagem; 
+        img.classList.add('d-block', 'w-100');
+        img.alt = `Banner do filme ${filme.nome}`; 
+
+        const caption = document.createElement('div');
+        caption.classList.add('carousel-caption', 'd-none', 'd-md-block', 'mb-3');
+        caption.innerHTML = `
+            <h1>${filme.nome}</h1>
+            <p>${filme.descricao}</p> 
+        `; 
+        
+        link.appendChild(img);
+        link.appendChild(caption);
+        carouselItem.appendChild(link);
+        carouselInner.appendChild(carouselItem);
+    });
+}
+
 async function carregarPaginaPrincipal() {
     const todosOsFilmes = await buscarFilmes();
     if (todosOsFilmes.length > 0) {
+
+        const filmesParaCarousel = todosOsFilmes.slice(0, 3);
+        montarCarouselDinamico(filmesParaCarousel);
+
         montarCards("categoria-acao", todosOsFilmes);
         montarCards("top10-filmes", todosOsFilmes.slice(0, 10), true);
         montarCards("categoria-aventura", todosOsFilmes);

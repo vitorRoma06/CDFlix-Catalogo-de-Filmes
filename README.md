@@ -16,8 +16,20 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 **Print da tela com a implementação**
 
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
+### Implementação da Visualização de Dados com Gráficos
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+Nesta etapa, o projeto foi expandido com a implementação de uma página de visualização de dados dinâmica, com o objetivo de apresentar uma análise sobre o catálogo de filmes cadastrados.
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+Para esta funcionalidade, optou-se pela biblioteca **`Chart.js`**, uma ferramenta de código aberto que permite a criação de gráficos interativos sem a necessidade de chaves de API ou cadastros. A fim de possibilitar a análise desejada, a base de dados (`db.json`) foi primeiramente enriquecida, com a adição de um campo `gênero` em cada registro de filme.
+
+A implementação consistiu na criação da página `graficos.html` para abrigar a visualização, que é controlada pelo script `assets/scripts/graficos.js`. Este script é responsável por:
+
+1.  Buscar os dados dos filmes de forma assíncrona a partir do `db.json`.
+2.  Processar os dados para contabilizar o número de filmes por gênero.
+3.  Renderizar dinamicamente um gráfico do tipo **rosca ("doughnut chart")**.
+
+O gráfico final exibe a distribuição de gêneros de forma percentual diretamente nas fatias (utilizando o plugin **`chartjs-plugin-datalabels`**), possui legendas e dicas de ferramenta personalizadas para uma melhor experiência do usuário, e é totalmente interativo.
+
+![alt text](public/assets/img/print-grafico1.png)
+
+![alt text](public/assets/img/print-grafico2.png)

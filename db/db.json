@@ -9,6 +9,7 @@
       "descricao": "Um narrador desiludido forma um clube de luta com um vendedor de sabonetes excêntrico.",
       "diretor": "David Fincher",
       "artistas": "Brad Pitt, Edward Norton, Helena Bonham Carter",
+      "genero": "Drama",
       "fotos": [
         "https://image.tmdb.org/t/p/original/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
         "https://image.tmdb.org/t/p/original/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
@@ -28,6 +29,7 @@
       "descricao": "Dois agentes federais investigam o desaparecimento de uma paciente em um hospital psiquiátrico isolado.",
       "diretor": "Martin Scorsese",
       "artistas": "Leonardo DiCaprio, Mark Ruffalo, Ben Kingsley",
+      "genero": "Suspense",
       "fotos": [
         "https://image.tmdb.org/t/p/original/8xt8AMb1OKC63AdhNSaYBWxB4Iq.jpg",
         "https://image.tmdb.org/t/p/original/6TMcyW2qbwvQfTGoQon7JNeaYOD.jpg",
@@ -46,8 +48,9 @@
       "descricao": "Baseado em fatos reais, um jovem vigarista é perseguido por um agente do FBI.",
       "diretor": "Steven Spielberg",
       "artistas": "Leonardo DiCaprio, Tom Hanks, Christopher Walken",
+      "genero": "Comédia",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/Ag6qhzsJd3k1NKuNrG9RmhZDMh7.jpg",
+        "https://image.tmdb.org/t/p/original/rwcEaZghpbt6mV0lRQ9ymz5oM9B.jpg",
         "https://image.tmdb.org/t/p/original/1JVh04awq0wCP7wYSKKmlh4lPNI.jpg",
         "https://image.tmdb.org/t/p/original/cMywb6ayGpTbKgCgZ0RORxPDsrA.jpg",
         "https://image.tmdb.org/t/p/original/ns8Jc9uXJPx6CX3JZqSmOyOIRHO.jpg",
@@ -64,6 +67,7 @@
       "descricao": "Através de momentos históricos dos EUA, um homem simples vive uma vida extraordinária.",
       "diretor": "Robert Zemeckis",
       "artistas": "Tom Hanks, Robin Wright, Gary Sinise",
+      "genero": "Drama",
       "fotos": [
         "https://image.tmdb.org/t/p/original/8XxkLzA1bEzFyiJCSV34q84jEjB.jpg",
         "https://image.tmdb.org/t/p/original/buJOnU5FK6iIXL0iQIRfgbl5dsH.jpg",
@@ -82,6 +86,7 @@
       "descricao": "Deadpool reúne uma equipe de mutantes para proteger um jovem com poderes sobrenaturais.",
       "diretor": "David Leitch",
       "artistas": "Ryan Reynolds, Josh Brolin, Zazie Beetz",
+      "genero": "Ação",
       "fotos": [
         "https://image.tmdb.org/t/p/original/7gwIbnB2j45wSC3esSzkRzfwcws.jpg",
         "https://image.tmdb.org/t/p/original/dBZhGEDbuWQFE2AHPCRtq20N98h.jpg",
@@ -100,6 +105,7 @@
       "descricao": "Um idoso realiza o sonho de voar com sua casa para a América do Sul, acompanhado por um escoteiro mirim.",
       "diretor": "Pete Docter",
       "artistas": "Edward Asner, Jordan Nagai, Christopher Plummer",
+      "genero": "Animação",
       "fotos": [
         "https://image.tmdb.org/t/p/original/mH9IXGi80ySUDkxl7uwsKNwqcyC.jpg",
         "https://image.tmdb.org/t/p/original/qz0C4Dd36TdiO5BVPMhemUNQsL2.jpg",
@@ -118,12 +124,9 @@
       "descricao": "Dentro da mente de uma garota, cinco emoções trabalham para guiá-la em uma mudança de vida.",
       "diretor": "Pete Docter",
       "artistas": "Amy Poehler, Phyllis Smith, Mindy Kaling",
+      "genero": "Animação",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/j29ekbcLpBvxnGk6LjdTc2EI5SA.jpg",
-        "https://image.tmdb.org/t/p/original/okJXzeIpbdx7q8rQjJwBNr8VTEk.jpg",
-        "https://image.tmdb.org/t/p/original/58R3IxvO1vvKmXO24L8UyPP15QE.jpg",
-        "https://image.tmdb.org/t/p/original/8Wi6j7zNs1Z1j2JPCt5iFBP0IvN.jpg",
-        "https://image.tmdb.org/t/p/original/ivyqLLoiprdAJmBKjLfRjdBOiif.jpg"
+        "https://image.tmdb.org/t/p/original/j29ekbcLpB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=.jpg"
       ]
     },
     {
@@ -132,9 +135,10 @@
       "classificacaoIdade": "16+",
       "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/a9kYEboW1TQaeilGYUAx1MO0DUp.jpg",
       "duracao": "2h 18min",
-      "descricao": "Dispostos a deixar suas vidas conturbadas para trás, irmãos gêmeos retornam à sua cidade natal para recomeçar suas vidas do zero, quando descobrem que um mal ainda maior está à espera deles para recebê-los de volta.",
+      "descricao": "Dispostos a deixar suas vidas conturbadas para trás, irmãos gêmeos retornam à sua cidade natal para recomeçar.",
       "diretor": "Ryan Coogler",
       "artistas": "Michael B. Jordan, Hailee Steinfeld",
+      "genero": "Suspense",
       "fotos": [
         "https://image.tmdb.org/t/p/original/jONSbZ92K3tvDEsYrBuog5DW1KL.jpg"
       ],

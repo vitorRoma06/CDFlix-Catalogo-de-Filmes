@@ -9,10 +9,10 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Vitor de Roma Honório
+- Matricula: 890180
+- Proposta de projeto escolhida: Catálogo de Filmes
+- Breve descrição sobre seu projeto: Esse projeto é um catálogo de filmes pensado para quem gosta de explorar novos títulos. Nele, os usuários poderão descobrir filmes de diversos gêneros, conferir informações detalhadas e filtrar as opções por ano e categoria. Também será possível criar uma lista de favoritos para guardar aqueles que mais chamarem a atenção, além de outras funcionalidades que tornam a experiência ainda mais completa.
 
 **Print da tela com a implementação**
 

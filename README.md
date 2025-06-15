@@ -24,7 +24,6 @@ O **CDFlix** é um catálogo de filmes pensado para quem gosta de explorar novos
 
 - Descobrir filmes de diversos gêneros
 - Conferir informações detalhadas
-- Filtrar opções por ano e categoria
 - Criar uma lista de favoritos
 - Cadastrar e editar filmes (admin)
 - Visualizar gráficos de distribuição dos filmes

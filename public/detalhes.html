@@ -9,18 +9,6 @@
     <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Estilo adicional para o ícone de favorito na página de detalhes */
-        #filme-titulo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        #favorite-icon-detalhes {
-            font-size: 2rem; /* Tamanho maior para destaque */
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body class="d-flex flex-column">
@@ -57,7 +45,7 @@
         <div class="container-detalhes-filme d-flex flex-column" id="detalhes-filme-container">
             <section class="d-flex align-items-center flex-column align-items-md-start flex-md-row">
                 <div class="esquerda-container d-flex flex-column p-3">
-                    <div id="filme-titulo-container">
+                    <div id="filme-titulo-container d-flex flex-column gap-3 my-3">
                         <h1 id="filme-titulo"></h1>
                         <i id="favorite-icon-detalhes" class="fa-solid fa-heart"></i>
                     </div>

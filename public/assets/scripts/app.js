@@ -1,25 +1,15 @@
-// URL da API de Filmes
-const FILMES_API_URL = "http://localhost:3000/filmes";
-
-// Variável global para armazenar os filmes carregados
+const FILMES_API_URL = "http://localhost:3000/filmes"
 let todosOsFilmes = [];
 
-/**
- * ATUALIZA A UI (MENU PRINCIPAL) COM BASE NO ESTADO DE LOGIN
- * Lê a variável global `usuarioCorrente` (definida e preenchida por login.js)
- */
 function updateUIBasedOnLogin() {
     const userMenu = document.getElementById('user-menu');
     const navFavoritos = document.getElementById('nav-favoritos');
-    const navCadastro = document.getElementById('nav-cadastro-filmes'); // Pega o novo item de menu
-
+    const navCadastro = document.getElementById('nav-cadastro-filmes'); 
     if (userMenu) {
         if (usuarioCorrente && usuarioCorrente.login) {
-            // Usuário está LOGADO
-            if (navFavoritos) navFavoritos.classList.remove('d-none');
+                        if (navFavoritos) navFavoritos.classList.remove('d-none');
 
-            // ATUALIZADO: Mostra o link de cadastro apenas se o usuário for admin
-            if (navCadastro) {
+                        if (navCadastro) {
                 if (usuarioCorrente.admin) {
                     navCadastro.classList.remove('d-none');
                 } else {
@@ -33,10 +23,8 @@ function updateUIBasedOnLogin() {
             `;
             document.getElementById('btn-logout').addEventListener('click', logoutUser);
         } else {
-            // Usuário está DESLOGADO
-            if (navFavoritos) navFavoritos.classList.add('d-none');
-            if (navCadastro) navCadastro.classList.add('d-none'); // Garante que esteja escondido
-
+                        if (navFavoritos) navFavoritos.classList.add('d-none');
+            if (navCadastro) navCadastro.classList.add('d-none'); 
             userMenu.innerHTML = `
                 <a href="login.html">Login</a>
                 <a href="login.html">Cadastre-se</a>
@@ -46,9 +34,6 @@ function updateUIBasedOnLogin() {
 }
 
 
-// ===================================================================
-// LÓGICA DE FILMES E FAVORITOS
-// ===================================================================
 
 async function buscarFilmes() {
     try {
@@ -93,8 +78,7 @@ async function toggleFavorito(filmeId) {
     }
 
     try {
-        await fetch(`${USUARIOS_API_URL}/${usuarioCorrente.id}`, { // USUARIOS_API_URL é definida em login.js
-            method: 'PATCH',
+        await fetch(`${USUARIOS_API_URL}/${usuarioCorrente.id}`, {             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ favoritos: usuarioCorrente.favoritos })
         });
@@ -116,9 +100,6 @@ async function toggleFavorito(filmeId) {
 }
 
 
-// ===================================================================
-// FUNÇÕES DE RENDERIZAÇÃO DE INTERFACE
-// ===================================================================
 
 function montarCarouselDinamico(filmesParaCarousel) {
     const carouselIndicators = document.querySelector('.carousel-indicators');
@@ -264,9 +245,6 @@ function setupBusca() {
 }
 
 
-// ===================================================================
-// LÓGICA DE CARREGAMENTO DE PÁGINAS ESPECÍFICAS
-// ===================================================================
 
 async function carregarPaginaPrincipal() {
     await buscarFilmes();
@@ -342,8 +320,7 @@ async function carregarPaginaFavoritos() {
 }
 
 async function carregarPaginaCadastro() {
-    // ATUALIZADO: Proteção de rota para administradores
-    if (!usuarioCorrente || !usuarioCorrente.admin) {
+        if (!usuarioCorrente || !usuarioCorrente.admin) {
         alert("Acesso negado. Você precisa ser um administrador para acessar esta página.");
         window.location.href = 'index.html';
         const mainContent = document.querySelector('.main');
@@ -461,9 +438,6 @@ async function carregarPaginaCadastro() {
 }
 
 
-// ===================================================================
-// PONTO DE ENTRADA DA APLICAÇÃO (ROTEADOR)
-// ===================================================================
 document.addEventListener('DOMContentLoaded', () => {
     updateUIBasedOnLogin();
 

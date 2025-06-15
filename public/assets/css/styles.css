@@ -13,12 +13,12 @@
     --cor-principal3: rgb(128, 128, 128);
     --cor-texto: rgb(255, 255, 255);
     --cor-texto2: rgb(229, 229, 229);
-    --cor-escura1: rgb(51, 51, 51);  
+    --cor-escura1: rgb(51, 51, 51);
     --cor-escura2: rgb(68, 68, 68);
-    --cor-escura3: rgb(30, 30, 30); 
-    --cor-texto-suave: rgb(153, 153, 153); 
-    --cor-principal2-escura: rgb(204, 0, 0); 
-    --cor-azul: rgb(13, 110, 253); 
+    --cor-escura3: rgb(30, 30, 30);
+    --cor-texto-suave: rgb(153, 153, 153);
+    --cor-principal2-escura: rgb(204, 0, 0);
+    --cor-azul: rgb(13, 110, 253);
     --fonte-family: "Roboto", sans-serif;
 }
 
@@ -43,7 +43,6 @@ body {
     font-style: normal;
 }
 
-/*header*/
 
 .cabecalho {
     background-color: var(--cor-principal1);
@@ -118,9 +117,7 @@ body {
     color: var(--cor-principal2);
 }
 
-/*fim header*/
 
-/*main*/
 html {
     height: 100%;
     overflow-x: hidden;
@@ -148,7 +145,8 @@ body {
     object-fit: cover;
     opacity: 0.7;
 }
-.carousel-caption > p{
+
+.carousel-caption>p {
     font-size: 1.5em;
 }
 
@@ -161,16 +159,17 @@ body {
     font-size: 2em !important;
 }
 
-/* --- Estilos para a Seção TOP 10 (CORRIGIDO) --- */
 .top10-filmes {
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 45px; /* Aumenta o espaço para o número aparecer */
-    padding: 10px 0 20px 0;
+    gap: 45px;
+        padding: 10px 0 20px 0;
 }
+
 .top10-filmes::-webkit-scrollbar {
     height: 8px;
 }
+
 .top10-filmes::-webkit-scrollbar-thumb {
     background-color: var(--cor-principal2);
     border-radius: 4px;
@@ -179,35 +178,35 @@ body {
 .banner-filme-top10 {
     position: relative;
     transition: transform 0.2s ease-in-out;
-    flex-shrink: 0; /* Impede que os itens encolham */
-    display: flex;
-    align-items: flex-end; /* Alinha o pôster na base */
-}
+    flex-shrink: 0;
+        display: flex;
+    align-items: flex-end;
+    }
+
 .banner-filme-top10:hover {
     transform: scale(1.05);
 }
 
-/* Estilo do número gigante */
 .top10-number {
     margin: 0;
     font-family: "Do Hyeon", sans-serif;
-    font-size: 250px; /* Tamanho grande para destaque */
-    color: rgb(0, 0, 0);
-    -webkit-text-stroke: 8px rgb(217, 217, 217); /* Borda branca no número */
-    line-height: 0.7;
+    font-size: 250px;
+        color: rgb(0, 0, 0);
+    -webkit-text-stroke: 8px rgb(217, 217, 217);
+        line-height: 0.7;
     z-index: 1;
     pointer-events: none;
-    transform: translateX(35%); /* Empurra o número para a direita, sobrepondo o card */
-}
+    transform: translateX(35%);
+    }
 
-/* Container do link e da imagem */
 .banner-filme-top10 a {
-    width: 220px;  /* AUMENTADO de 180px */
-    height: 325px; /* AUMENTADO de 266px para manter a proporção */
-    display: block;
+    width: 220px;
+        height: 325px;
+        display: block;
     position: relative;
     z-index: 2;
 }
+
 .banner-filme-top10 img {
     width: 100%;
     height: 100%;
@@ -215,10 +214,8 @@ body {
     object-fit: cover;
 }
 
-/*fim main*/
 
 
-/*footer*/
 
 
 .rodape {
@@ -286,9 +283,7 @@ body {
     margin: 0;
 }
 
-/*fim footer*/
 
-/*inicio menu mobile*/
 #menuToggle,
 .menu-icon {
     display: none;
@@ -366,11 +361,16 @@ body {
     }
 }
 
-/*fim menu mobile*/
 
 @media screen and (max-width: 655px) {
     .login-cadastro a:nth-child(2) {
         display: none;
+    }
+    .logo-cabecalho{
+        display: none;
+    }
+    .end-cabecalho{
+        margin-left: 30px;
     }
 }
 
@@ -380,7 +380,6 @@ body {
     }
 }
 
-/*detalhes*/
 .container-detalhes-filme {
     margin-top: 20px;
     width: 80%;
@@ -445,20 +444,20 @@ body {
 }
 
 
-/* fim detalhes*/
 
-/* inicio cadastro_filme */
 .form-label {
     color: var(--cor-texto);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
     background-color: var(--cor-escura1);
     color: var(--cor-texto);
     border: 1px solid var(--cor-escura2);
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     background-color: var(--cor-escura2);
     color: var(--cor-texto);
     border-color: var(--cor-principal2);
@@ -570,9 +569,7 @@ body {
     color: var(--cor-texto-suave);
 }
 
-/* fim cadastro_filme */
 
-/* --- Estilos para Seções e Títulos --- */
 .section-title {
     color: var(--cor-texto);
     text-decoration: var(--cor-principal2) underline;
@@ -581,16 +578,17 @@ body {
     font-weight: 500;
 }
 
-/* --- Estilos para a Seção TOP 10 --- */
 .top10-filmes {
     overflow-x: auto;
     overflow-y: hidden;
     gap: 20px;
     padding: 10px 0 10px 0;
 }
+
 .top10-filmes::-webkit-scrollbar {
     height: 8px;
 }
+
 .top10-filmes::-webkit-scrollbar-thumb {
     background-color: var(--cor-principal2);
     border-radius: 4px;
@@ -603,6 +601,7 @@ body {
     display: flex;
     align-items: flex-end;
 }
+
 .banner-filme-top10:hover {
     transform: scale(1.05);
 }
@@ -626,6 +625,7 @@ body {
     position: relative;
     z-index: 2;
 }
+
 .banner-filme-top10 img {
     width: 100%;
     height: 100%;
@@ -633,7 +633,6 @@ body {
     object-fit: cover;
 }
 
-/* --- Estilos para a Galeria Geral de Filmes --- */
 .card-filme {
     position: relative;
     overflow: hidden;
@@ -644,6 +643,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .card-filme:hover {
     transform: scale(1.05);
 }
@@ -651,27 +651,30 @@ body {
 .card-filme .card-img-container {
     position: relative;
 }
+
 .card-filme img {
     width: 100%;
     height: auto;
     object-fit: cover;
     aspect-ratio: 2/3;
 }
+
 .card-filme .card-body {
     padding: 0.8rem;
     color: var(--cor-texto);
     flex-grow: 1;
 }
+
 .card-filme .card-title {
     font-size: 1rem;
     font-weight: bold;
 }
+
 .card-filme .card-details {
     font-size: 0.8rem;
     color: var(--cor-texto2);
 }
 
-/* --- Estilos para o Ícone de Favorito --- */
 .favorite-icon {
     position: absolute;
     top: 10px;
@@ -683,21 +686,27 @@ body {
     z-index: 10;
     transition: color 0.2s ease-in-out, transform 0.2s ease;
 }
+
 .favorite-icon:hover {
     transform: scale(1.2);
 }
+
 .favorite-icon.favoritado {
     color: var(--cor-principal2);
 }
 
-/* --- Estilos da Página de Login --- */
+#favorite-icon-detalhes {
+    position: static;
+    font-size: 2rem;
+    cursor: pointer;
+}
 
-/* Garante que o conteúdo principal ocupe toda a altura disponível */
+
+
 .login-page-main {
     flex-grow: 1;
 }
 
-/* Card principal com sombra e bordas arredondadas */
 .login-card {
     background-color: var(--cor-escura3);
     padding: 2.5rem;
@@ -706,18 +715,15 @@ body {
     border: 1px solid var(--cor-escura2);
 }
 
-/* Título do card de login */
 .login-card h3 {
-    color: var(--cor-principal2); /* Usa a cor de destaque do tema */
-    font-weight: bold;
+    color: var(--cor-principal2);
+        font-weight: bold;
 }
 
-/* Labels dos campos do formulário */
 .login-card .form-label {
     color: var(--cor-texto2);
 }
 
-/* Link para criar conta */
 .create-account-link {
     color: var(--cor-texto-suave);
     text-decoration: none;
@@ -729,12 +735,12 @@ body {
     text-decoration: underline;
 }
 
-/* Conteúdo do Modal de Cadastro */
 .modal-content-custom {
     background-color: var(--cor-escura1);
     border: 1px solid var(--cor-escura2);
 }
 
-.modal-title{
+.modal-title {
     color: var(--cor-principal2);
 }
+

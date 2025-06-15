@@ -1,11 +1,8 @@
-// URLs e constantes para autenticação
 const USUARIOS_API_URL = "http://localhost:3000/usuarios";
 const LOGIN_PAGE_URL = "login.html";
 
-// Objeto para o usuário corrente, acessível globalmente
 let usuarioCorrente = {};
 
-// Função para gerar IDs únicos para novos usuários
 function generateUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
         const r = (Math.random() * 16) | 0;
@@ -14,11 +11,6 @@ function generateUUID() {
     });
 }
 
-/**
- * Verifica se um usuário está logado, confrontando login e senha com a API.
- * @param {string} login - O login do usuário.
- * @param {string} senha - A senha do usuário.
- */
 async function loginUser(login, senha) {
     try {
         const response = await fetch(USUARIOS_API_URL);
@@ -28,8 +20,7 @@ async function loginUser(login, senha) {
         if (usuarioEncontrado) {
             usuarioCorrente = usuarioEncontrado;
             sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
-            window.location.href = 'index.html'; // Redireciona para a página principal
-        } else {
+            window.location.href = 'index.html';         } else {
             alert('Usuário ou senha incorretos.');
         }
     } catch (error) {
@@ -38,23 +29,13 @@ async function loginUser(login, senha) {
     }
 }
 
-/**
- * Remove os dados do usuário da sessionStorage e o redireciona para a página de login.
- */
+
 function logoutUser() {
     sessionStorage.removeItem('usuarioCorrente');
     usuarioCorrente = {};
     window.location.href = LOGIN_PAGE_URL;
 }
 
-/**
- * Cadastra um novo usuário na API.
- * @param {string} nome 
- * @param {string} email 
- * @param {string} login 
- * @param {string} senha 
- * @returns {boolean} - Retorna true se o cadastro for bem-sucedido.
- */
 async function addUser(nome, email, login, senha) {
     const novoUsuario = {
         id: generateUUID(),
@@ -62,8 +43,7 @@ async function addUser(nome, email, login, senha) {
         email,
         login,
         senha,
-        favoritos: [] // Todo novo usuário começa com a lista de favoritos vazia
-    };
+        favoritos: []     };
 
     try {
         await fetch(USUARIOS_API_URL, {
@@ -80,11 +60,6 @@ async function addUser(nome, email, login, senha) {
     }
 }
 
-/**
- * INICIALIZAÇÃO DO MÓDULO DE LOGIN
- * Esta parte do código é executada assim que o script é carregado.
- * Ele verifica a sessionStorage e preenche o objeto `usuarioCorrente`.
- */
 (() => {
     const usuarioJSON = sessionStorage.getItem('usuarioCorrente');
     if (usuarioJSON) {

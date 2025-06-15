@@ -7,12 +7,9 @@
       "nome": "Administrador",
       "email": "admin@cdflix.com",
       "favoritos": [
-        8,
-        1,
-        2,
-        3,
-        4,
-        5
+        15,
+        14,
+        13
       ],
       "admin": true
     },
@@ -22,15 +19,6 @@
       "senha": "123",
       "nome": "Usuário Comum",
       "email": "user@cdflix.com",
-      "favoritos": [],
-      "admin": false
-    },
-    {
-      "id": "a829a637-f9b3-461e-9369-345bb6ebff5f",
-      "nome": "vitor de roma",
-      "email": "vitorroma@gmail.com",
-      "login": "vitor",
-      "senha": "123",
       "favoritos": [],
       "admin": false
     }
@@ -167,9 +155,7 @@
       "diretor": "Pete Docter",
       "artistas": "Amy Poehler, Phyllis Smith, Mindy Kaling",
       "genero": "Animação",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/j29ekbcLpB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {

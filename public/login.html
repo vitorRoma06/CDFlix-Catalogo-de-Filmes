@@ -73,15 +73,11 @@
     <script src="assets/scripts/login.js"></script>
     <script src="assets/scripts/app.js"></script>
     <script>
-        // O script para "ligar" os eventos da página de login permanece aqui
         document.addEventListener('DOMContentLoaded', () => {
-             // Redireciona se o usuário já estiver logado
             if (usuarioCorrente && usuarioCorrente.login) {
                 window.location.href = 'index.html';
                 return;
             }
-
-            // Adiciona o evento de submit ao formulário de login
             const loginForm = document.getElementById('login-form');
             if(loginForm) {
                 loginForm.addEventListener('submit', (e) => {
@@ -92,7 +88,6 @@
                 });
             }
 
-            // Adiciona o evento de clique ao botão de salvar novo usuário
             const btnSalvar = document.getElementById('btn-salvar-usuario');
             if(btnSalvar) {
                 btnSalvar.addEventListener('click', async () => {

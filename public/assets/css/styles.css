@@ -161,127 +161,59 @@ body {
     font-size: 2em !important;
 }
 
-.container-filmes {
-    margin: 0 10px 10px 20px;
-    gap: 10px;
-
-}
-
-.container-filmes>h2 {
-    font-weight: 500;
-    text-decoration: underline var(--cor-principal2);
-    text-underline-offset: 5px;
-}
-
+/* --- Estilos para a Seção TOP 10 (CORRIGIDO) --- */
 .top10-filmes {
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 20px;
-    padding: 10px 0 10px 0;
-
+    gap: 45px; /* Aumenta o espaço para o número aparecer */
+    padding: 10px 0 20px 0;
+}
+.top10-filmes::-webkit-scrollbar {
+    height: 8px;
+}
+.top10-filmes::-webkit-scrollbar-thumb {
+    background-color: var(--cor-principal2);
+    border-radius: 4px;
 }
 
 .banner-filme-top10 {
     position: relative;
-    transition: ease-in-out 0.2s;
-    flex: 1 1 0;
-    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+    flex-shrink: 0; /* Impede que os itens encolham */
+    display: flex;
+    align-items: flex-end; /* Alinha o pôster na base */
 }
-
 .banner-filme-top10:hover {
     transform: scale(1.05);
-    cursor: pointer;
 }
 
-.banner-filme-top10>p {
-    position: absolute;
+/* Estilo do número gigante */
+.top10-number {
     margin: 0;
     font-family: "Do Hyeon", sans-serif;
-    font-size: 300px;
+    font-size: 250px; /* Tamanho grande para destaque */
     color: rgb(0, 0, 0);
-    -webkit-text-stroke: 8px rgb(217, 217, 217);
-    top: 12px;
-    left: 45px;
-    line-height: 0.8;
+    -webkit-text-stroke: 8px rgb(217, 217, 217); /* Borda branca no número */
+    line-height: 0.7;
+    z-index: 1;
     pointer-events: none;
+    transform: translateX(35%); /* Empurra o número para a direita, sobrepondo o card */
 }
 
-.banner-filme-top10>a {
-    width: 100%;
-    min-width: 200px;
-    max-width: 220px;
-    aspect-ratio: 160 / 237;
-}
-
-.banner-filme-top10>a>img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.banner-filme-top10>a>h3 {
-    font-size: 1.3em;
-    bottom: 10px;
-    width: 100%;
-    max-width: 90%;
-    background-color: var(--cor-principal2);
-    padding: 5px;
-    border-radius: 5px;
-
-
-}
-
-
-.categoria-filmes {
-    padding: 10px 0 10px 0;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.categoria-filmes::-webkit-scrollbar {
-    height: 10px;
-}
-
-
-.banner-filme-padrao>a {
-    flex: 1 1 auto;
+/* Container do link e da imagem */
+.banner-filme-top10 a {
+    width: 220px;  /* AUMENTADO de 180px */
+    height: 325px; /* AUMENTADO de 266px para manter a proporção */
+    display: block;
     position: relative;
-    min-width: 160px;
-    max-width: 220px;
-    max-height: calc(220px * 237 / 160);
-    width: 100%;
-    height: 100%;
+    z-index: 2;
 }
-
-.banner-filme-padrao>a>img {
+.banner-filme-top10 img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
     object-fit: cover;
-    border-radius: 5px;
 }
-
-.banner-filme-padrao>a>h3 {
-    font-size: 1.3em !important;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    max-width: 90%;
-    background-color: var(--cor-principal2);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.banner-filme-padrao {
-    transition: ease-in-out 0.2s;
-}
-
-.banner-filme-padrao:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-
 
 /*fim main*/
 
@@ -639,3 +571,121 @@ body {
 }
 
 /* fim cadastro_filme */
+
+/* --- Estilos para Seções e Títulos --- */
+.section-title {
+    color: var(--cor-texto);
+    text-decoration: var(--cor-principal2) underline;
+    text-underline-offset: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* --- Estilos para a Seção TOP 10 --- */
+.top10-filmes {
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    padding: 10px 0 10px 0;
+}
+.top10-filmes::-webkit-scrollbar {
+    height: 8px;
+}
+.top10-filmes::-webkit-scrollbar-thumb {
+    background-color: var(--cor-principal2);
+    border-radius: 4px;
+}
+
+.banner-filme-top10 {
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+}
+.banner-filme-top10:hover {
+    transform: scale(1.05);
+}
+
+.top10-number {
+    margin: 0;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 200px;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 7px rgb(217, 217, 217);
+    line-height: 0.8;
+    z-index: 1;
+    pointer-events: none;
+    transform: translateX(30%);
+}
+
+.banner-filme-top10 a {
+    width: 160px;
+    height: 237px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+.banner-filme-top10 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* --- Estilos para a Galeria Geral de Filmes --- */
+.card-filme {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+    background-color: var(--cor-escura1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card-filme:hover {
+    transform: scale(1.05);
+}
+
+.card-filme .card-img-container {
+    position: relative;
+}
+.card-filme img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+.card-filme .card-body {
+    padding: 0.8rem;
+    color: var(--cor-texto);
+    flex-grow: 1;
+}
+.card-filme .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.card-filme .card-details {
+    font-size: 0.8rem;
+    color: var(--cor-texto2);
+}
+
+/* --- Estilos para o Ícone de Favorito --- */
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 0 5px black;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+.favorite-icon.favoritado {
+    color: var(--cor-principal2);
+}

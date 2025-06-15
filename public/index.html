@@ -5,83 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDFlix</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body class="d-flex flex-column">
     <header class="cabecalho d-flex align-items-center justify-content-between w-100 position-fixed">
         <div class="start-cabecalho d-flex align-items-center">
-            <a href="index.html" class="logo-cabecalho text-decoration-none">
-                <img src="assets/img/CDFLIX.png" alt="logo">
-            </a>
+            <a href="index.html" class="logo-cabecalho text-decoration-none"><img src="assets/img/CDFLIX.png"
+                    alt="logo"></a>
             <nav class="menu">
                 <input type="checkbox" id="menuToggle">
                 <label for="menuToggle" class="menu-icon"><i class="fa fa-bars"></i><i
                         class="fa fa-times-circle"></i></label>
                 <ul class="d-flex m-0 p-0">
                     <li class="active"><a href="index.html">Início</a></li>
-                    <li><a href="#">Filmes</a></li>
-                    <li><a href="#">Minha Lista</a></li>
-                    <li><a href="#">Categorias</a></li>
                     <li><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
-                    <li><a href="graficos.html">Gráficos</a></li>
                 </ul>
             </nav>
         </div>
         <div class="end-cabecalho d-flex align-items-center">
-            <form class="busca d-flex flex-nowrap">
-                <input type="search" placeholder="Títulos, gêneros..." class="w-100">
-                <button type="submit"><i class="fa fa-search"></i>
-                </button>
+            <form class="busca d-flex flex-nowrap" id="form-busca">
+                <input type="search" placeholder="Títulos, gêneros..." class="w-100" id="input-busca">
+                <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="login-cadastro d-flex">
-                <a href="#">Login</a>
-                <a href="#">Cadastre-se</a>
-            </div>
+            <div class="login-cadastro d-flex"><a href="#">Login</a><a href="#">Cadastre-se</a></div>
         </div>
-
     </header>
+
     <main class="main">
-        <div class="container banner pb-3">
-            <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads">
-                <div class="carousel-indicators">
+        <div id="conteudo-principal">
+            <div class="container banner pb-3" id="banner-section">
+                <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads">
+                    <div class="carousel-indicators"></div>
+                    <div class="carousel-inner"></div>
+                    <div>
+                        <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev"><span
+                                class="carousel-control-prev-icon"></span></button>
+                        <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next"><span
+                                class="carousel-control-next-icon"></span></button>
+                    </div>
                 </div>
-                <div class="carousel-inner">
-                </div>
-                <div>
-                    <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
+            </div>
+
+            <div class="container">
+                <section id="top10-section" class="container-filmes d-flex flex-column mb-5">
+                    <h2 class="section-title">Brasil: Top 10 filmes hoje</h2>
+                    <div id="top10-container" class="top10-filmes d-flex align-items-center flex-nowrap"></div>
+                </section>
             </div>
         </div>
 
-        <section class="filmes d-flex flex-column">
-            <h1>Filmes</h1>
+        <div class="container">
+            <section id="all-films-section" class="container-filmes d-flex flex-column">
+                <h2 class="section-title" id="all-films-title">Todos os Filmes</h2>
+                <div id="filmes-container" class="row g-4"></div>
+            </section>
+            
+        </div>
 
-            <section class="container-filmes d-flex flex-column">
-                <h2>Ação</h2>
-                <div id="categoria-acao" class="categoria-filmes d-flex justify-content-evenly"></div>
-            </section>
-            <section class="container-filmes d-flex flex-column">
-                <h2>Brasil: Top 10 filmes hoje</h2>
-                <div id="top10-filmes"
-                    class="top10-filmes d-flex align-items-center justify-content-evenly flex-nowrap"></div>
-            </section>
-            <section class="container-filmes d-flex flex-column">
-                <h2>Aventura</h2>
-                <div id="categoria-aventura" class="categoria-filmes d-flex justify-content-evenly flex-nowrap"></div>
-            </section>
-        </section>
+        <div class="container mt-5">
+            <h1 class="section-title">Distribuição de Filmes por Gênero</h1>
+            <div style="max-width: 550px; margin: 30px auto;">
+                 <canvas id="generoChart"></canvas>
+            </div>
+        </div>
     </main>
+
     <footer class="rodape d-flex flex-column gap-5">
         <div class="container-rodape d-flex flex-column flex-md-row align-items-center">
             <img src="assets/img/CDFLIX.png" alt="">
@@ -97,9 +89,7 @@
                         <li><a href="#">Contato</a></li>
                         <li><a href="#">Ajuda</a></li>
                     </ul>
-
                 </nav>
-
             </div>
             <div class="autoria h-100">
                 <h5 class="pb-1">Autoria</h5>
@@ -107,17 +97,18 @@
                 <p>Curso: <span class="fw-normal">Engenharia de Software</span></p>
                 <p>Turma: <span class="fw-normal">Noite</span></p>
             </div>
-
-
         </div>
         <div class="copyright text-center">
             <p>&copy; 2025 CDFlix. Todos os direitos reservados</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/scripts/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="assets/scripts/graficos.js"></script>
 </body>
 
 </html>

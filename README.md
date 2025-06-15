@@ -91,7 +91,7 @@ tp-2/
 
 1. **Clone o repositório:**
    ```sh
-   git clone https://github.com/seu-usuario/seu-repo.git
+   git clone https://github.com/vitorRoma06/CDFlix-Catalogo-de-Filmes.git
    cd tp-2
    ```
 

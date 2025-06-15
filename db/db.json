@@ -7,9 +7,8 @@
       "nome": "Administrador",
       "email": "admin@cdflix.com",
       "favoritos": [
-        15,
-        14,
-        13
+        1,
+        2
       ],
       "admin": true
     },

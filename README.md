@@ -115,7 +115,6 @@ tp-2/
 - **Nome:** Vitor de Roma Honório
 - **Curso:** Engenharia de Software - 1º Período
 - **Disciplina:** Desenvolvimento de Interfaces Web (PUC Minas)
-- [![GitHub](https://img.shields.io/badge/GitHub-vitorRoma06-181717?style=flat&logo=github)](https://github.com/vitorRoma06)
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-vitordroma-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/vitordroma/)
 
 ---

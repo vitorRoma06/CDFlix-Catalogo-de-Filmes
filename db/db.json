@@ -17,7 +17,8 @@
         "https://image.tmdb.org/t/p/original/yrN6gon5NG6t7Lgh05byChFSZem.jpg",
         "https://image.tmdb.org/t/p/original/n0ceI4oS4wCad1GPvnf4FMBwBie.jpg"
       ],
-      "id": 1
+      "id": 1,
+      "favorito": false
     },
     {
       "id": 2,
@@ -36,7 +37,8 @@
         "https://image.tmdb.org/t/p/original/qxnuwAaD7cFyLW8yRM3H6sqMGxM.jpg",
         "https://image.tmdb.org/t/p/original/iZDnaE7DtL2MvgwqwHS8jy4Px6o.jpg",
         "https://image.tmdb.org/t/p/original/ecvy2kMxsJ60ej52beZ0F8EOGkL.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "id": 3,
@@ -55,7 +57,8 @@
         "https://image.tmdb.org/t/p/original/cMywb6ayGpTbKgCgZ0RORxPDsrA.jpg",
         "https://image.tmdb.org/t/p/original/ns8Jc9uXJPx6CX3JZqSmOyOIRHO.jpg",
         "https://image.tmdb.org/t/p/original/cv6v0N87qGjT3HB1wOGR0lyBixD.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "id": 4,
@@ -74,7 +77,8 @@
         "https://image.tmdb.org/t/p/original/byrjaKls5V8j2o87SuEGbphTGJG.jpg",
         "https://image.tmdb.org/t/p/original/7c9UVPPiTPltouxRVY6N9uugaVA.jpg",
         "https://image.tmdb.org/t/p/original/mzfx54nfDPTUXZOG48u4LaEheDy.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "id": 5,
@@ -93,7 +97,8 @@
         "https://image.tmdb.org/t/p/original/avhDOCbHBaxzqmxZIYDThh7ITTc.jpg",
         "https://image.tmdb.org/t/p/original/sGtXDnT08Nkb5NQq2oGD3os1zg9.jpg",
         "https://image.tmdb.org/t/p/original/ue36Y5NOejMwYhXdKeMjGmUvTOq.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "id": 6,
@@ -112,7 +117,8 @@
         "https://image.tmdb.org/t/p/original/oMH0n8vvCuNVBueN2balBEpm9FY.jpg",
         "https://image.tmdb.org/t/p/original/7UIP0uLzv5mXNYUasLbjDV6Mawd.jpg",
         "https://image.tmdb.org/t/p/original/vmU4aluI4SYiPIYC5ghqXAu29tK.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "id": 7,
@@ -127,7 +133,8 @@
       "genero": "Animação",
       "fotos": [
         "https://image.tmdb.org/t/p/original/j29ekbcLpB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=.jpg"
-      ]
+      ],
+      "favorito": false
     },
     {
       "nome": "Pecadores",
@@ -142,7 +149,8 @@
       "fotos": [
         "https://image.tmdb.org/t/p/original/jONSbZ92K3tvDEsYrBuog5DW1KL.jpg"
       ],
-      "id": 8
+      "id": 8,
+      "favorito": false
     }
   ]
 }

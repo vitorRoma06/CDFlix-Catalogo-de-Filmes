@@ -17,11 +17,11 @@
         "https://image.tmdb.org/t/p/original/yrN6gon5NG6t7Lgh05byChFSZem.jpg",
         "https://image.tmdb.org/t/p/original/n0ceI4oS4wCad1GPvnf4FMBwBie.jpg"
       ],
-      "id": 1,
+      "id": "1",
       "favorito": false
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Ilha do Medo",
       "ano": 2010,
       "classificacaoIdade": "16+",
@@ -41,7 +41,7 @@
       "favorito": false
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Prenda-me Se For Capaz",
       "ano": 2002,
       "classificacaoIdade": "12+",
@@ -61,7 +61,7 @@
       "favorito": false
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Forrest Gump",
       "ano": 1994,
       "classificacaoIdade": "12+",
@@ -81,7 +81,7 @@
       "favorito": false
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Deadpool 2",
       "ano": 2018,
       "classificacaoIdade": "18+",
@@ -101,7 +101,7 @@
       "favorito": false
     },
     {
-      "id": 6,
+      "id": "6",
       "nome": "Up - Altas Aventuras",
       "ano": 2009,
       "classificacaoIdade": "Livre",
@@ -121,7 +121,7 @@
       "favorito": false
     },
     {
-      "id": 7,
+      "id": "7",
       "nome": "Divertidamente",
       "ano": 2015,
       "classificacaoIdade": "Livre",
@@ -137,6 +137,7 @@
       "favorito": false
     },
     {
+      "id": "8",
       "nome": "Pecadores",
       "ano": 2025,
       "classificacaoIdade": "16+",
@@ -147,9 +148,252 @@
       "artistas": "Michael B. Jordan, Hailee Steinfeld",
       "genero": "Suspense",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/jONSbZ92K3tvDEsYrBuog5DW1KL.jpg"
+        "https://image.tmdb.org/t/p/original/jONSbZ92K3tvDEsYrBuog5DW1KL.jpg",
+        "https://image.tmdb.org/t/p/original/k2ZOy1r6JFpF6lmdUtx8hUPxiuU.jpg",
+        "https://image.tmdb.org/t/p/original/LbVI2BVhNUf6dI7cN5oexmHiwK.jpg",
+        "https://image.tmdb.org/t/p/original/aWM8eYmhqBgH4YC5WLLPTJxlc2t.jpg",
+        "https://image.tmdb.org/t/p/original/47cXXEPn3ZQ29h3Yee9kDoouJcl.jpg"
       ],
-      "id": 8,
+      "favorito": false
+    },
+    {
+      "id": "9",
+      "nome": "O Cavaleiro das Trevas",
+      "ano": 2008,
+      "classificacaoIdade": "12+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4lj1ikfsSmMZNyfdi8R8Tv5tsgb.jpg",
+      "duracao": "2h 32min",
+      "descricao": "Quando a ameaça conhecida como O Coringa emerge de seu passado, ele causa estragos e caos nas pessoas de Gotham.",
+      "diretor": "Christopher Nolan",
+      "artistas": "Christian Bale, Heath Ledger, Aaron Eckhart",
+      "genero": "Ação",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/x5f2uTfw0Pqc5QI4ch5AHICee2o.jpg",
+        "https://image.tmdb.org/t/p/original/plDp52MirFHc2PMJRMNWoG0kfr3.jpg",
+        "https://image.tmdb.org/t/p/original/qejZvo4zzL6KQ74h2IVnfGDbeQj.jpg",
+        "https://image.tmdb.org/t/p/original/2lvBcFv2rbrAYsegEFWNkcbMnbU.jpg",
+        "https://image.tmdb.org/t/p/original/cN80g2y0bOTGvwT9dCrohnH9rkV.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "10",
+      "nome": "Pulp Fiction",
+      "ano": 1994,
+      "classificacaoIdade": "18+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tptjnB2LDbuUWya9Cx5sQtv5hqb.jpg",
+      "duracao": "2h 34min",
+      "descricao": "As vidas de dois assassinos da máfia, um boxeador, a esposa de um gângster e um par de bandidos se entrelaçam em quatro contos de violência e redenção.",
+      "diretor": "Quentin Tarantino",
+      "artistas": "John Travolta, Uma Thurman, Samuel L. Jackson",
+      "genero": "Crime",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/suaEvnuLbqKSA1PFb5iRKsRpaOh.jpg",
+        "https://image.tmdb.org/t/p/original/m3oPI8fcY2Iaf2Cqj2aW1y2xW2b.jpg",
+        "https://image.tmdb.org/t/p/original/9r12kmD0QYgD55GM8nCzgaD60dC.jpg",
+        "https://image.tmdb.org/t/p/original/3229K1GC2DMR2k6sA6t1vj3ji1w.jpg",
+        "https://image.tmdb.org/t/p/original/9myrRGK7oJbO2a5lAlO2iZNeaSz.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "11",
+      "nome": "O Poderoso Chefão",
+      "ano": 1972,
+      "classificacaoIdade": "14+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wOMxE93W6KcZTuCeNUByNTSaLLt.jpg",
+      "duracao": "2h 55min",
+      "descricao": "O patriarca de uma dinastia do crime organizado transfere o controle de seu império clandestino para seu filho relutante.",
+      "diretor": "Francis Ford Coppola",
+      "artistas": "Marlon Brando, Al Pacino, James Caan",
+      "genero": "Crime",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/6xKCYgH16UuwEGAyro1o1DhDxhA.jpg",
+        "https://image.tmdb.org/t/p/original/5C22uRE08Oq729c4t9T2p3j2fde.jpg",
+        "https://image.tmdb.org/t/p/original/kOKm2hga50K4iSh0m5X6zB21eQe.jpg",
+        "https://image.tmdb.org/t/p/original/9StAbwpa5QefeUo9xK0eGLe2dPS.jpg",
+        "https://image.tmdb.org/t/p/original/hW1Ea72F5y523i8cK28i6eYIuH6.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "12",
+      "nome": "A Origem",
+      "ano": 2010,
+      "classificacaoIdade": "14+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9e3Dz7aCANy5aRUQF745IlNloJ1.jpg",
+      "duracao": "2h 28min",
+      "descricao": "Um ladrão que rouba segredos corporativos através do uso da tecnologia de compartilhamento de sonhos é dada a tarefa inversa de plantar uma ideia na mente de um C.E.O.",
+      "diretor": "Christopher Nolan",
+      "artistas": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page",
+      "genero": "Ficção Científica",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/s2bT29y0ngXxxu2IA8AOzzXTRhd.jpg",
+        "https://image.tmdb.org/t/p/original/vL5hV3b2n1tqAJYk222m1C2pcxS.jpg",
+        "https://image.tmdb.org/t/p/original/2S1lG2S0lg32Y3IomIe22CUS3b0.jpg",
+        "https://image.tmdb.org/t/p/original/dH2wYx2A2N6aNqqZg0yF3h0j4Lj.jpg",
+        "https://image.tmdb.org/t/p/original/aIwim3nJc0hKlYDVgNfNsemR3uB.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "13",
+      "nome": "Homem-Aranha no Aranhaverso",
+      "ano": 2018,
+      "classificacaoIdade": "10+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ejqquyk7r3GLXPir62rksUmPKj5.jpg",
+      "duracao": "1h 57min",
+      "descricao": "O adolescente Miles Morales se torna o Homem-Aranha de sua realidade, cruzando seu caminho com cinco contrapartes de outras dimensões para parar uma ameaça para todas as realidades.",
+      "diretor": "Bob Persichetti, Peter Ramsey, Rodney Rothman",
+      "artistas": "Shameik Moore, Jake Johnson, Hailee Steinfeld",
+      "genero": "Animação",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/1D6bE2d2Yg3n4gAP2B4aXo5p2s.jpg",
+        "https://image.tmdb.org/t/p/original/uUiId6cG32JSRI6RyBQSv1JpU8.jpg",
+        "https://image.tmdb.org/t/p/original/m9YdeG2M3s2UT4HSrGQo4i3655p.jpg",
+        "https://image.tmdb.org/t/p/original/n2C015pbfXk9zto1SsatKONbb7G.jpg",
+        "https://image.tmdb.org/t/p/original/3Gk5i2sMuP2f6nL1Xb1G171w10S.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "14",
+      "nome": "Matrix",
+      "ano": 1999,
+      "classificacaoIdade": "12+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lDqMDI3xpbB9UQRyeXfei0MXhqb.jpg",
+      "duracao": "2h 16min",
+      "descricao": "Um hacker descobre a verdade chocante sobre sua realidade e seu papel na guerra contra seus controladores.",
+      "diretor": "Lana Wachowski, Lilly Wachowski",
+      "artistas": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+      "genero": "Ficção Científica",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/7u3pxc0K1wx32kOK0yuvPOp4r_a.jpg",
+        "https://image.tmdb.org/t/p/original/e6aK1ksf9kQkH9L3nC4EtIvqD6W.jpg",
+        "https://image.tmdb.org/t/p/original/gGzmtY2n6i3iJ3T3s0bA45G8x5C.jpg",
+        "https://image.tmdb.org/t/p/original/uIwt5Mlp2a09vL0L5y5LwtmpaA8.jpg",
+        "https://image.tmdb.org/t/p/original/gFX3oHdVAb2jS4sQc8aNf8ePQ3A.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "15",
+      "nome": "A Viagem de Chihiro",
+      "ano": 2001,
+      "classificacaoIdade": "Livre",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hhoKhsyJ3hFaxEm5pMdZRiTu2lJ.jpg",
+      "duracao": "2h 5min",
+      "descricao": "Durante a mudança para um novo bairro, uma menina de 10 anos vagueia por um mundo governado por deuses, bruxas e espíritos, e onde os humanos são transformados em bestas.",
+      "diretor": "Hayao Miyazaki",
+      "artistas": "Rumi Hiiragi, Miyu Irino, Mari Natsuki",
+      "genero": "Animação",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/Ab8K2m8eM3j3a7b5gXm2P8wB6zE.jpg",
+        "https://image.tmdb.org/t/p/original/6v0I8n4lI2dGL3y5i2pB0jPAw4O.jpg",
+        "https://image.tmdb.org/t/p/original/6GvT43mGepKOFa2d2wAswiK2HlG.jpg",
+        "https://image.tmdb.org/t/p/original/aTh3s0r54F5nBi5E4yD30Kow5h5.jpg",
+        "https://image.tmdb.org/t/p/original/4R24K3t5s5z145d3sAIb9c5fSgo.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "16",
+      "nome": "Parasita",
+      "ano": 2019,
+      "classificacaoIdade": "16+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bNGW8zYA91VqTZfV3jnKHPEKKvB.jpg",
+      "duracao": "2h 12min",
+      "descricao": "A ganância e a discriminação de classe ameaçam o relacionamento simbiótico recém-formado entre a rica família Park e o clã pobre dos Kim.",
+      "diretor": "Bong Joon Ho",
+      "artistas": "Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong",
+      "genero": "Suspense",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+        "https://image.tmdb.org/t/p/original/aBabm3d4Tdec3nUj3yQ5d326a1P.jpg",
+        "https://image.tmdb.org/t/p/original/71i5wAq29i5IpcgS9gIqKqYgYx6.jpg",
+        "https://image.tmdb.org/t/p/original/5j1kKaSgB33GweBGP3BYlIBqMcb.jpg",
+        "https://image.tmdb.org/t/p/original/3iYQW9iSRmE2Lz4p1a23a3HLa8u.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "17",
+      "nome": "Coringa",
+      "ano": 2019,
+      "classificacaoIdade": "16+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLxgVxFWvb9hhUyCDDXxRPPnFck.jpg",
+      "duracao": "2h 2min",
+      "descricao": "Em Gotham City, o comediante mentalmente perturbado Arthur Fleck é marginalizado e maltratado pela sociedade. Ele então embarca em uma espiral descendente de revolução e crimes sangrentos.",
+      "diretor": "Todd Phillips",
+      "artistas": "Joaquin Phoenix, Robert De Niro, Zazie Beetz",
+      "genero": "Drama",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
+        "https://image.tmdb.org/t/p/original/j1i62D9h4310d292yfxb9s4sYOf.jpg",
+        "https://image.tmdb.org/t/p/original/d8lGe8s6L9vscxAPvVj2kHhC74g.jpg",
+        "https://image.tmdb.org/t/p/original/uJ7Twy2A6y22n7r69W8cUC22fzm.jpg",
+        "https://image.tmdb.org/t/p/original/vjQWzACde3pQjY2I5tA1xJ6h3Zj.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "18",
+      "nome": "Um Sonho de Liberdade",
+      "ano": 1994,
+      "classificacaoIdade": "16+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/umX3lBhHoTV7Lsci140Yr8VpXyN.jpg",
+      "duracao": "2h 22min",
+      "descricao": "Dois homens presos se unem ao longo de vários anos, encontrando consolo e eventual redenção através de atos de decência comum.",
+      "diretor": "Frank Darabont",
+      "artistas": "Tim Robbins, Morgan Freeman, Bob Gunton",
+      "genero": "Drama",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/9Xw0I5RV2ZqNLADR3k02p4RhtB.jpg",
+        "https://image.tmdb.org/t/p/original/532rIwnzBde5sT7vj4mOaPZSOX.jpg",
+        "https://image.tmdb.org/t/p/original/l5K8a4PA5G5SA6cpHgdC1gAARrA.jpg",
+        "https://image.tmdb.org/t/p/original/qq23Lbk4g2a4H5gmm3A4o3a92r.jpg",
+        "https://image.tmdb.org/t/p/original/iVSg3e2H4go1y2s3s2p6zPzns7M.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "19",
+      "nome": "Interestelar",
+      "ano": 2014,
+      "classificacaoIdade": "10+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nCbkOyOMTEwlEV0LtCOvCnwEONA.jpg",
+      "duracao": "2h 49min",
+      "descricao": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço na tentativa de garantir a sobrevivência da humanidade.",
+      "diretor": "Christopher Nolan",
+      "artistas": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+      "genero": "Ficção Científica",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+        "https://image.tmdb.org/t/p/original/pbrkL804c8yAv3zBdyH3CDnWMbO.jpg",
+        "https://image.tmdb.org/t/p/original/x1QZ1qrkIys022jbyL2e0g0T4i2.jpg",
+        "https://image.tmdb.org/t/p/original/wzLde7keWza2sQYpL4mM02n1Xo.jpg",
+        "https://image.tmdb.org/t/p/original/s2it0bSL4aaAI5K2yS0GZ1t2sI.jpg"
+      ],
+      "favorito": false
+    },
+    {
+      "id": "20",
+      "nome": "Vingadores: Ultimato",
+      "ano": 2019,
+      "classificacaoIdade": "12+",
+      "imagem": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg",
+      "duracao": "3h 1min",
+      "descricao": "Após os eventos devastadores de 'Guerra Infinita', os Vingadores se reúnem mais uma vez para reverter as ações de Thanos e restaurar o equilíbrio do universo.",
+      "diretor": "Anthony Russo, Joe Russo",
+      "artistas": "Robert Downey Jr., Chris Evans, Mark Ruffalo",
+      "genero": "Ação",
+      "fotos": [
+        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+        "https://image.tmdb.org/t/p/original/nA2DonoGFMyxj2s4wI8pAbI3A9.jpg",
+        "https://image.tmdb.org/t/p/original/ab6dI1jht1b2z6lAjGstlA0T1ni.jpg",
+        "https://image.tmdb.org/t/p/original/c6YyA4divdY6m4NBsCde0a0g3D8.jpg",
+        "https://image.tmdb.org/t/p/original/hWCmcBzxH3A2s2VTg2aFEd2Ea7E.jpg"
+      ],
       "favorito": false
     }
   ]

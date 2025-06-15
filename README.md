@@ -52,7 +52,7 @@ O **CDFlix** é um catálogo de filmes pensado para quem gosta de explorar novos
 ## 📁 Estrutura de Pastas
 
 ```plaintext
-tp-2/
+CDFlix/
 ├── db/
 │   └── db.json                # Banco de dados simulado (JSON Server)
 ├── public/
@@ -92,7 +92,6 @@ tp-2/
 1. **Clone o repositório:**
    ```sh
    git clone https://github.com/vitorRoma06/CDFlix-Catalogo-de-Filmes.git
-   cd tp-2
    ```
 
 2. **Instale as dependências:**

@@ -1,4 +1,40 @@
 {
+  "usuarios": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador",
+      "email": "admin@cdflix.com",
+      "favoritos": [
+        8,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "admin": true
+    },
+    {
+      "id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuário Comum",
+      "email": "user@cdflix.com",
+      "favoritos": [],
+      "admin": false
+    },
+    {
+      "id": "a829a637-f9b3-461e-9369-345bb6ebff5f",
+      "nome": "vitor de roma",
+      "email": "vitorroma@gmail.com",
+      "login": "vitor",
+      "senha": "123",
+      "favoritos": [],
+      "admin": false
+    }
+  ],
   "filmes": [
     {
       "nome": "Clube da Luta",
@@ -187,13 +223,7 @@
       "diretor": "Quentin Tarantino",
       "artistas": "John Travolta, Uma Thurman, Samuel L. Jackson",
       "genero": "Crime",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/suaEvnuLbqKSA1PFb5iRKsRpaOh.jpg",
-        "https://image.tmdb.org/t/p/original/m3oPI8fcY2Iaf2Cqj2aW1y2xW2b.jpg",
-        "https://image.tmdb.org/t/p/original/9r12kmD0QYgD55GM8nCzgaD60dC.jpg",
-        "https://image.tmdb.org/t/p/original/3229K1GC2DMR2k6sA6t1vj3ji1w.jpg",
-        "https://image.tmdb.org/t/p/original/9myrRGK7oJbO2a5lAlO2iZNeaSz.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -207,13 +237,7 @@
       "diretor": "Francis Ford Coppola",
       "artistas": "Marlon Brando, Al Pacino, James Caan",
       "genero": "Crime",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/6xKCYgH16UuwEGAyro1o1DhDxhA.jpg",
-        "https://image.tmdb.org/t/p/original/5C22uRE08Oq729c4t9T2p3j2fde.jpg",
-        "https://image.tmdb.org/t/p/original/kOKm2hga50K4iSh0m5X6zB21eQe.jpg",
-        "https://image.tmdb.org/t/p/original/9StAbwpa5QefeUo9xK0eGLe2dPS.jpg",
-        "https://image.tmdb.org/t/p/original/hW1Ea72F5y523i8cK28i6eYIuH6.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -227,13 +251,7 @@
       "diretor": "Christopher Nolan",
       "artistas": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page",
       "genero": "Ficção Científica",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/s2bT29y0ngXxxu2IA8AOzzXTRhd.jpg",
-        "https://image.tmdb.org/t/p/original/vL5hV3b2n1tqAJYk222m1C2pcxS.jpg",
-        "https://image.tmdb.org/t/p/original/2S1lG2S0lg32Y3IomIe22CUS3b0.jpg",
-        "https://image.tmdb.org/t/p/original/dH2wYx2A2N6aNqqZg0yF3h0j4Lj.jpg",
-        "https://image.tmdb.org/t/p/original/aIwim3nJc0hKlYDVgNfNsemR3uB.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -247,13 +265,7 @@
       "diretor": "Bob Persichetti, Peter Ramsey, Rodney Rothman",
       "artistas": "Shameik Moore, Jake Johnson, Hailee Steinfeld",
       "genero": "Animação",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/1D6bE2d2Yg3n4gAP2B4aXo5p2s.jpg",
-        "https://image.tmdb.org/t/p/original/uUiId6cG32JSRI6RyBQSv1JpU8.jpg",
-        "https://image.tmdb.org/t/p/original/m9YdeG2M3s2UT4HSrGQo4i3655p.jpg",
-        "https://image.tmdb.org/t/p/original/n2C015pbfXk9zto1SsatKONbb7G.jpg",
-        "https://image.tmdb.org/t/p/original/3Gk5i2sMuP2f6nL1Xb1G171w10S.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -267,13 +279,7 @@
       "diretor": "Lana Wachowski, Lilly Wachowski",
       "artistas": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
       "genero": "Ficção Científica",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/7u3pxc0K1wx32kOK0yuvPOp4r_a.jpg",
-        "https://image.tmdb.org/t/p/original/e6aK1ksf9kQkH9L3nC4EtIvqD6W.jpg",
-        "https://image.tmdb.org/t/p/original/gGzmtY2n6i3iJ3T3s0bA45G8x5C.jpg",
-        "https://image.tmdb.org/t/p/original/uIwt5Mlp2a09vL0L5y5LwtmpaA8.jpg",
-        "https://image.tmdb.org/t/p/original/gFX3oHdVAb2jS4sQc8aNf8ePQ3A.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -287,13 +293,7 @@
       "diretor": "Hayao Miyazaki",
       "artistas": "Rumi Hiiragi, Miyu Irino, Mari Natsuki",
       "genero": "Animação",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/Ab8K2m8eM3j3a7b5gXm2P8wB6zE.jpg",
-        "https://image.tmdb.org/t/p/original/6v0I8n4lI2dGL3y5i2pB0jPAw4O.jpg",
-        "https://image.tmdb.org/t/p/original/6GvT43mGepKOFa2d2wAswiK2HlG.jpg",
-        "https://image.tmdb.org/t/p/original/aTh3s0r54F5nBi5E4yD30Kow5h5.jpg",
-        "https://image.tmdb.org/t/p/original/4R24K3t5s5z145d3sAIb9c5fSgo.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -308,11 +308,7 @@
       "artistas": "Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong",
       "genero": "Suspense",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
-        "https://image.tmdb.org/t/p/original/aBabm3d4Tdec3nUj3yQ5d326a1P.jpg",
-        "https://image.tmdb.org/t/p/original/71i5wAq29i5IpcgS9gIqKqYgYx6.jpg",
-        "https://image.tmdb.org/t/p/original/5j1kKaSgB33GweBGP3BYlIBqMcb.jpg",
-        "https://image.tmdb.org/t/p/original/3iYQW9iSRmE2Lz4p1a23a3HLa8u.jpg"
+        "https://image.tmdb.org/t/p/original/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"
       ],
       "favorito": false
     },
@@ -328,11 +324,7 @@
       "artistas": "Joaquin Phoenix, Robert De Niro, Zazie Beetz",
       "genero": "Drama",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
-        "https://image.tmdb.org/t/p/original/j1i62D9h4310d292yfxb9s4sYOf.jpg",
-        "https://image.tmdb.org/t/p/original/d8lGe8s6L9vscxAPvVj2kHhC74g.jpg",
-        "https://image.tmdb.org/t/p/original/uJ7Twy2A6y22n7r69W8cUC22fzm.jpg",
-        "https://image.tmdb.org/t/p/original/vjQWzACde3pQjY2I5tA1xJ6h3Zj.jpg"
+        "https://image.tmdb.org/t/p/original/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg"
       ],
       "favorito": false
     },
@@ -347,13 +339,7 @@
       "diretor": "Frank Darabont",
       "artistas": "Tim Robbins, Morgan Freeman, Bob Gunton",
       "genero": "Drama",
-      "fotos": [
-        "https://image.tmdb.org/t/p/original/9Xw0I5RV2ZqNLADR3k02p4RhtB.jpg",
-        "https://image.tmdb.org/t/p/original/532rIwnzBde5sT7vj4mOaPZSOX.jpg",
-        "https://image.tmdb.org/t/p/original/l5K8a4PA5G5SA6cpHgdC1gAARrA.jpg",
-        "https://image.tmdb.org/t/p/original/qq23Lbk4g2a4H5gmm3A4o3a92r.jpg",
-        "https://image.tmdb.org/t/p/original/iVSg3e2H4go1y2s3s2p6zPzns7M.jpg"
-      ],
+      "fotos": [],
       "favorito": false
     },
     {
@@ -368,11 +354,7 @@
       "artistas": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
       "genero": "Ficção Científica",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
-        "https://image.tmdb.org/t/p/original/pbrkL804c8yAv3zBdyH3CDnWMbO.jpg",
-        "https://image.tmdb.org/t/p/original/x1QZ1qrkIys022jbyL2e0g0T4i2.jpg",
-        "https://image.tmdb.org/t/p/original/wzLde7keWza2sQYpL4mM02n1Xo.jpg",
-        "https://image.tmdb.org/t/p/original/s2it0bSL4aaAI5K2yS0GZ1t2sI.jpg"
+        "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg"
       ],
       "favorito": false
     },
@@ -388,11 +370,7 @@
       "artistas": "Robert Downey Jr., Chris Evans, Mark Ruffalo",
       "genero": "Ação",
       "fotos": [
-        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
-        "https://image.tmdb.org/t/p/original/nA2DonoGFMyxj2s4wI8pAbI3A9.jpg",
-        "https://image.tmdb.org/t/p/original/ab6dI1jht1b2z6lAjGstlA0T1ni.jpg",
-        "https://image.tmdb.org/t/p/original/c6YyA4divdY6m4NBsCde0a0g3D8.jpg",
-        "https://image.tmdb.org/t/p/original/hWCmcBzxH3A2s2VTg2aFEd2Ea7E.jpg"
+        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
       ],
       "favorito": false
     }

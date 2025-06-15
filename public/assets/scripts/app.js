@@ -1,10 +1,58 @@
-const API_URL = "http://localhost:3000/filmes";
+// URL da API de Filmes
+const FILMES_API_URL = "http://localhost:3000/filmes";
+
+// Variável global para armazenar os filmes carregados
 let todosOsFilmes = [];
 
-// 1. FUNÇÕES DE API (Não precisam de alteração)
+/**
+ * ATUALIZA A UI (MENU PRINCIPAL) COM BASE NO ESTADO DE LOGIN
+ * Lê a variável global `usuarioCorrente` (definida e preenchida por login.js)
+ */
+function updateUIBasedOnLogin() {
+    const userMenu = document.getElementById('user-menu');
+    const navFavoritos = document.getElementById('nav-favoritos');
+    const navCadastro = document.getElementById('nav-cadastro-filmes'); // Pega o novo item de menu
+
+    if (userMenu) {
+        if (usuarioCorrente && usuarioCorrente.login) {
+            // Usuário está LOGADO
+            if (navFavoritos) navFavoritos.classList.remove('d-none');
+
+            // ATUALIZADO: Mostra o link de cadastro apenas se o usuário for admin
+            if (navCadastro) {
+                if (usuarioCorrente.admin) {
+                    navCadastro.classList.remove('d-none');
+                } else {
+                    navCadastro.classList.add('d-none');
+                }
+            }
+
+            userMenu.innerHTML = `
+                <span class="text-white me-3">Olá, ${usuarioCorrente.nome}</span>
+                <button id="btn-logout" class="btn btn-limpar">Logout</button>
+            `;
+            document.getElementById('btn-logout').addEventListener('click', logoutUser);
+        } else {
+            // Usuário está DESLOGADO
+            if (navFavoritos) navFavoritos.classList.add('d-none');
+            if (navCadastro) navCadastro.classList.add('d-none'); // Garante que esteja escondido
+
+            userMenu.innerHTML = `
+                <a href="login.html">Login</a>
+                <a href="login.html">Cadastre-se</a>
+            `;
+        }
+    }
+}
+
+
+// ===================================================================
+// LÓGICA DE FILMES E FAVORITOS
+// ===================================================================
+
 async function buscarFilmes() {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(FILMES_API_URL);
         if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
         todosOsFilmes = await response.json();
         return todosOsFilmes;
@@ -14,49 +62,63 @@ async function buscarFilmes() {
     }
 }
 
-async function buscarFilmePorId(id) {
+async function buscarFilmePorId(filmeId) {
     try {
-        const response = await fetch(`${API_URL}/${id}`);
-        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+        const response = await fetch(`${FILMES_API_URL}/${filmeId}`);
+        if (!response.ok) {
+            if (response.status === 404) return null;
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
         return await response.json();
     } catch (error) {
-        console.error(`Falha ao buscar filme com ID ${id}:`, error);
+        console.error(`Falha ao buscar filme com ID ${filmeId}:`, error);
         return null;
     }
 }
 
-async function toggleFavorito(filmeId, novoStatus) {
+async function toggleFavorito(filmeId) {
+    if (!usuarioCorrente || !usuarioCorrente.id) {
+        alert("Você precisa estar logado para favoritar filmes.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const filmeIdNum = parseInt(filmeId, 10);
+    const index = usuarioCorrente.favoritos.indexOf(filmeIdNum);
+
+    if (index > -1) {
+        usuarioCorrente.favoritos.splice(index, 1);
+    } else {
+        usuarioCorrente.favoritos.push(filmeIdNum);
+    }
+
     try {
-        const response = await fetch(`${API_URL}/${filmeId}`, {
+        await fetch(`${USUARIOS_API_URL}/${usuarioCorrente.id}`, { // USUARIOS_API_URL é definida em login.js
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ favorito: novoStatus }),
+            body: JSON.stringify({ favoritos: usuarioCorrente.favoritos })
         });
-        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
-        return await response.json();
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
+        
+        const path = window.location.pathname.split('/').pop();
+        if (path === '' || path === 'index.html') {
+            montarCardsTop10('top10-container', todosOsFilmes.slice(0, 10));
+            montarCardsGerais('filmes-container', todosOsFilmes);
+        } else if (path === 'favoritos.html') {
+            carregarPaginaFavoritos();
+        } else if (path === 'detalhes.html') {
+             carregarPaginaDetalhes();
+        }
+
     } catch (error) {
-        console.error(`Falha ao atualizar favorito para o filme ${filmeId}:`, error);
-        return null;
+        console.error("Erro ao atualizar favoritos:", error);
     }
 }
 
-// 2. FUNÇÕES DE RENDERIZAÇÃO DA PÁGINA PRINCIPAL (Não precisam de alteração)
-function adicionarLogicaFavorito(icon, filme) {
-    icon.addEventListener('click', async (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        
-        const novoStatus = !filme.favorito;
-        const filmeAtualizado = await toggleFavorito(filme.id, novoStatus);
 
-        if (filmeAtualizado) {
-            filme.favorito = novoStatus;
-            document.querySelectorAll(`.favorite-icon[data-id='${filme.id}']`).forEach(i => {
-                i.classList.toggle('favoritado', novoStatus);
-            });
-        }
-    });
-}
+// ===================================================================
+// FUNÇÕES DE RENDERIZAÇÃO DE INTERFACE
+// ===================================================================
 
 function montarCarouselDinamico(filmesParaCarousel) {
     const carouselIndicators = document.querySelector('.carousel-indicators');
@@ -78,7 +140,7 @@ function montarCarouselDinamico(filmesParaCarousel) {
 
         const carouselItem = document.createElement('div');
         carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-        const imagemSrc = filme.fotos && filme.fotos.length > 0 ? filme.fotos[0] : filme.imagem;
+        const imagemSrc = (filme.fotos && filme.fotos.length > 0) ? filme.fotos[0] : filme.imagem;
         carouselItem.innerHTML = `
             <a href="detalhes.html?id=${filme.id}">
                 <img src="${imagemSrc}" class="d-block w-100" alt="Banner do filme ${filme.nome}">
@@ -98,22 +160,30 @@ function montarCardsTop10(containerId, filmesArray) {
     container.innerHTML = "";
 
     filmesArray.forEach((filme, index) => {
+        const isFavorito = usuarioCorrente.favoritos?.includes(parseInt(filme.id));
         const article = document.createElement("article");
         article.className = "banner-filme-top10";
-
+        
         const link = document.createElement("a");
         link.href = `detalhes.html?id=${filme.id}`;
-        link.innerHTML = `<img src="${filme.imagem}" alt="Pôster de ${filme.nome}" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">`;
-
-        const heartIcon = document.createElement('i');
-        heartIcon.className = `fa-solid fa-heart favorite-icon ${filme.favorito ? 'favoritado' : ''}`;
-        heartIcon.setAttribute('data-id', filme.id);
         
-        link.prepend(heartIcon);
-        adicionarLogicaFavorito(heartIcon, filme);
-
+        const img = document.createElement('img');
+        img.src = filme.imagem;
+        img.alt = `Pôster de ${filme.nome}`;
+        img.onerror = function() { this.onerror=null; this.src='assets/img/placeholder.png'; };
+        
+        const heartIcon = document.createElement('i');
+        heartIcon.className = `fa-solid fa-heart favorite-icon ${isFavorito ? 'favoritado' : ''}`;
+        heartIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleFavorito(filme.id);
+        });
+        
+        link.appendChild(img);
         article.innerHTML = `<p class="top10-number">${index + 1}</p>`;
         article.appendChild(link);
+        article.querySelector('a').prepend(heartIcon);
         container.appendChild(article);
     });
 }
@@ -123,12 +193,13 @@ function montarCardsGerais(containerId, filmesArray) {
     if (!container) return;
     container.innerHTML = "";
 
-    if (filmesArray.length === 0) {
-        container.innerHTML = `<p class="text-center col-12">Nenhum filme encontrado com este termo.</p>`;
+    if (!filmesArray || filmesArray.length === 0) {
+        container.innerHTML = `<p class="text-center col-12">Nenhum filme encontrado.</p>`;
         return;
     }
 
     filmesArray.forEach(filme => {
+        const isFavorito = usuarioCorrente.favoritos?.includes(parseInt(filme.id));
         const col = document.createElement("div");
         col.className = "col-6 col-md-4 col-lg-3";
         
@@ -140,11 +211,13 @@ function montarCardsGerais(containerId, filmesArray) {
         imgContainer.innerHTML = `<a href="detalhes.html?id=${filme.id}"><img src="${filme.imagem}" alt="${filme.nome}" onerror="this.onerror=null; this.src='assets/img/placeholder.png';"></a>`;
 
         const heartIcon = document.createElement('i');
-        heartIcon.className = `fa-solid fa-heart favorite-icon ${filme.favorito ? 'favoritado' : ''}`;
-        heartIcon.setAttribute('data-id', filme.id);
-        
+        heartIcon.className = `fa-solid fa-heart favorite-icon ${isFavorito ? 'favoritado' : ''}`;
+        heartIcon.addEventListener('click', (e) => {
+             e.preventDefault();
+             e.stopPropagation();
+             toggleFavorito(filme.id)
+        });
         imgContainer.prepend(heartIcon);
-        adicionarLogicaFavorito(heartIcon, filme);
 
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
@@ -160,12 +233,13 @@ function montarCardsGerais(containerId, filmesArray) {
     });
 }
 
-// 3. LÓGICA DE BUSCA (Não precisa de alteração)
 function setupBusca() {
     const formBusca = document.getElementById('form-busca');
     const inputBusca = document.getElementById('input-busca');
     const conteudoPrincipal = document.getElementById('conteudo-principal');
     const allFilmsTitle = document.getElementById('all-films-title');
+
+    if (!formBusca) return;
 
     formBusca.addEventListener('submit', (e) => e.preventDefault());
 
@@ -173,12 +247,12 @@ function setupBusca() {
         const termo = inputBusca.value.trim().toLowerCase();
         
         if (termo === '') {
-            conteudoPrincipal.style.display = 'block';
-            allFilmsTitle.textContent = 'Todos os Filmes';
+            if(conteudoPrincipal) conteudoPrincipal.style.display = 'block';
+            if(allFilmsTitle) allFilmsTitle.textContent = 'Todos os Filmes';
             montarCardsGerais('filmes-container', todosOsFilmes);
         } else {
-            conteudoPrincipal.style.display = 'none';
-            allFilmsTitle.textContent = `Resultados para: "${inputBusca.value}"`;
+            if(conteudoPrincipal) conteudoPrincipal.style.display = 'none';
+            if(allFilmsTitle) allFilmsTitle.textContent = `Resultados para: "${inputBusca.value}"`;
             
             const filmesFiltrados = todosOsFilmes.filter(filme => 
                 filme.nome.toLowerCase().includes(termo) ||
@@ -189,7 +263,11 @@ function setupBusca() {
     });
 }
 
-// 4. INICIALIZAÇÃO E LÓGICA DE PÁGINAS
+
+// ===================================================================
+// LÓGICA DE CARREGAMENTO DE PÁGINAS ESPECÍFICAS
+// ===================================================================
+
 async function carregarPaginaPrincipal() {
     await buscarFilmes();
     if (todosOsFilmes.length > 0) {
@@ -203,16 +281,34 @@ async function carregarPaginaPrincipal() {
 async function carregarPaginaDetalhes() {
     const params = new URLSearchParams(window.location.search);
     const filmeId = params.get('id');
-    if (!filmeId) return;
+    const container = document.getElementById("detalhes-filme-container");
+
+    if (!filmeId) {
+        if(container) container.innerHTML = "<h1>ID do filme não fornecido.</h1>";
+        return;
+    };
+    
     const filme = await buscarFilmePorId(filmeId);
-    if (!filme) return;
+    
+    if (!filme) {
+        if(container) container.innerHTML = "<h1>Filme não encontrado.</h1>";
+        return;
+    }
+
+    const isFavorito = usuarioCorrente.favoritos?.includes(parseInt(filme.id));
+    
     document.getElementById("filme-titulo").textContent = filme.nome;
+    const heartIcon = document.getElementById("favorite-icon-detalhes");
+    heartIcon.className = `fa-solid fa-heart favorite-icon ${isFavorito ? 'favoritado' : ''}`;
+    heartIcon.dataset.filmeId = filme.id;
+
     document.getElementById("filme-banner").src = filme.imagem;
     document.getElementById("filme-banner").alt = `Pôster de ${filme.nome}`;
     document.getElementById("filme-detalhes").innerHTML = `${filme.ano} &bull; ${filme.duracao} &bull; ${filme.classificacaoIdade}`;
     document.getElementById("filme-descricao").textContent = filme.descricao;
     document.getElementById("filme-diretor").textContent = filme.diretor;
     document.getElementById("filme-artistas").textContent = filme.artistas;
+
     const divFotos = document.querySelector(".div-fotos");
     if (divFotos) {
         divFotos.innerHTML = "";
@@ -229,10 +325,36 @@ async function carregarPaginaDetalhes() {
     }
 }
 
-// LÓGICA DA PÁGINA DE CADASTRO (COMPLETA E CORRIGIDA)
+async function carregarPaginaFavoritos() {
+    if (!usuarioCorrente || !usuarioCorrente.id) {
+        alert("Você precisa estar logado para ver seus favoritos.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    await buscarFilmes();
+    
+    const filmesFavoritos = todosOsFilmes.filter(filme => 
+        usuarioCorrente.favoritos.includes(parseInt(filme.id))
+    );
+    
+    montarCardsGerais('favoritos-container', filmesFavoritos);
+}
+
 async function carregarPaginaCadastro() {
+    // ATUALIZADO: Proteção de rota para administradores
+    if (!usuarioCorrente || !usuarioCorrente.admin) {
+        alert("Acesso negado. Você precisa ser um administrador para acessar esta página.");
+        window.location.href = 'index.html';
+        const mainContent = document.querySelector('.main');
+        if (mainContent) mainContent.style.display = 'none';
+        return;
+    }
+
     const form = document.getElementById('form-filme');
     const tableBody = document.querySelector(".table-container tbody");
+    if(!form || !tableBody) return;
+    
     let editId = null;
 
     const popularTabela = async () => {
@@ -261,7 +383,6 @@ async function carregarPaginaCadastro() {
         });
     };
 
-    // LÓGICA DE SUBMISSÃO DO FORMULÁRIO (CRIAR/ATUALIZAR)
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const fotosArray = document.getElementById('fotos').value.split(',').map(url => url.trim()).filter(url => url);
@@ -274,11 +395,10 @@ async function carregarPaginaCadastro() {
             descricao: document.getElementById('descricao').value,
             diretor: document.getElementById('diretor').value,
             artistas: document.getElementById('artistas').value,
-            fotos: fotosArray,
-            favorito: false
+            fotos: fotosArray
         };
 
-        const url = editId ? `${API_URL}/${editId}` : API_URL;
+        const url = editId ? `${FILMES_API_URL}/${editId}` : FILMES_API_URL;
         const method = editId ? 'PUT' : 'POST';
 
         try {
@@ -299,7 +419,6 @@ async function carregarPaginaCadastro() {
         }
     });
 
-    // LÓGICA DOS BOTÕES DA TABELA (EDITAR/DELETAR)
     tableBody.addEventListener('click', async (e) => {
         const editButton = e.target.closest('.btn-editar');
         const deleteButton = e.target.closest('.btn-excluir');
@@ -327,8 +446,7 @@ async function carregarPaginaCadastro() {
             const id = deleteButton.dataset.id;
             if (confirm(`Tem certeza que deseja excluir o filme com ID ${id}?`)) {
                 try {
-                    const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-                    if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+                    await fetch(`${FILMES_API_URL}/${id}`, { method: 'DELETE' });
                     alert('Filme excluído com sucesso!');
                     await popularTabela();
                 } catch (error) {
@@ -343,14 +461,29 @@ async function carregarPaginaCadastro() {
 }
 
 
-// 5. ROTEADOR
+// ===================================================================
+// PONTO DE ENTRADA DA APLICAÇÃO (ROTEADOR)
+// ===================================================================
 document.addEventListener('DOMContentLoaded', () => {
+    updateUIBasedOnLogin();
+
     const path = window.location.pathname.split('/').pop();
     if (path === '' || path === 'index.html') {
         carregarPaginaPrincipal();
     } else if (path === 'detalhes.html') {
         carregarPaginaDetalhes();
+        const heartIconDetalhes = document.getElementById('favorite-icon-detalhes');
+        if (heartIconDetalhes) {
+            heartIconDetalhes.addEventListener('click', () => {
+                const filmeId = heartIconDetalhes.dataset.filmeId;
+                if (filmeId) {
+                    toggleFavorito(filmeId);
+                }
+            });
+        }
     } else if (path === 'cadastro_filme.html') {
         carregarPaginaCadastro();
+    } else if (path === 'favoritos.html') {
+        carregarPaginaFavoritos();
     }
 });

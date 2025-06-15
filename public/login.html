@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CDFlix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="d-flex flex-column">
+    <header class="cabecalho d-flex align-items-center justify-content-between w-100 position-fixed">
+        <div class="start-cabecalho">
+            <a href="index.html" class="logo-cabecalho text-decoration-none">
+                <img src="assets/img/CDFLIX.png" alt="logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="main login-page-main d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <div class="login-card">
+                        <form id="login-form" class="form">
+                            <h3 class="text-center mb-4">Entrar</h3>
+                            <div class="form-group mb-3">
+                                <label for="username" class="form-label">Usuário</label>
+                                <input type="text" name="username" id="username" class="form-control" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" name="submit" class="btn btn-cadastrar btn-lg">Entrar</button>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="#" class="create-account-link" data-bs-toggle="modal" data-bs-target="#registerModal">Não tem uma conta? Cadastre-se</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo Usuário</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="register-form">
+                        <div class="form-group mb-3"><label for="reg-nome" class="form-label">Nome Completo</label><input type="text" id="reg-nome" class="form-control" required></div>
+                        <div class="form-group mb-3"><label for="reg-email" class="form-label">Email</label><input type="email" id="reg-email" class="form-control" required></div>
+                        <div class="form-group mb-3"><label for="reg-login" class="form-label">Login</label><input type="text" id="reg-login" class="form-control" required></div>
+                        <div class="form-group mb-3"><label for="reg-senha" class="form-label">Senha</label><input type="password" id="reg-senha" class="form-control" required></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-limpar" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btn-salvar-usuario" class="btn btn-cadastrar">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/scripts/login.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script>
+        // O script para "ligar" os eventos da página de login permanece aqui
+        document.addEventListener('DOMContentLoaded', () => {
+             // Redireciona se o usuário já estiver logado
+            if (usuarioCorrente && usuarioCorrente.login) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Adiciona o evento de submit ao formulário de login
+            const loginForm = document.getElementById('login-form');
+            if(loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const login = document.getElementById('username').value;
+                    const senha = document.getElementById('password').value;
+                    loginUser(login, senha); // Chama a função de login.js
+                });
+            }
+
+            // Adiciona o evento de clique ao botão de salvar novo usuário
+            const btnSalvar = document.getElementById('btn-salvar-usuario');
+            if(btnSalvar) {
+                btnSalvar.addEventListener('click', async () => {
+                    const nome = document.getElementById('reg-nome').value;
+                    const email = document.getElementById('reg-email').value;
+                    const login = document.getElementById('reg-login').value;
+                    const senha = document.getElementById('reg-senha').value;
+                    if (nome && email && login && senha) {
+                        const sucesso = await addUser(nome, email, login, senha);
+                        if (sucesso) {
+                            const modalEl = document.getElementById('registerModal');
+                            const modal = bootstrap.Modal.getInstance(modalEl);
+                            if(modal) modal.hide();
+                            document.getElementById('register-form').reset();
+                        }
+                    } else {
+                        alert("Por favor, preencha todos os campos.");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

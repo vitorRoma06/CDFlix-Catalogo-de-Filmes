@@ -25,19 +25,20 @@
                         class="fa fa-times-circle"></i></label>
                 <ul class="d-flex m-0 p-0">
                     <li><a href="index.html">Início</a></li>
-                    <li class="active"><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
+                    <li id="nav-favoritos" class="d-none"><a href="favoritos.html">Favoritos</a></li>
+                    <li id="nav-cadastro-filmes" class="d-none"><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
                 </ul>
             </nav>
         </div>
         <div class="end-cabecalho d-flex align-items-center">
-            <form class="busca d-flex flex-nowrap">
-                <input type="search" placeholder="Títulos, gêneros..." class="w-100">
+            <form class="busca d-flex flex-nowrap" id="form-busca">
+                <input type="search" placeholder="Títulos, gêneros..." class="w-100" id="input-busca">
                 <button type="submit"><i class="fa fa-search"></i>
                 </button>
             </form>
-            <div class="login-cadastro d-flex">
-                <a href="#">Login</a>
-                <a href="#">Cadastre-se</a>
+            <div id="user-menu" class="login-cadastro d-flex align-items-center">
+                <a href="login.html">Login</a>
+                <a href="login.html" class="btn-cadastrar-menu">Cadastre-se</a>
             </div>
         </div>
     </header>
@@ -151,9 +152,8 @@
             <img src="assets/img/CDFLIX.png" alt="">
             <div class="conteudo-rodape d-flex justify-content-between flex-column">
                 <div class="redes-sociais d-flex">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/vitorRoma06" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vitordroma/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
                 <nav class="menu-rodape">
                     <ul class="d-flex p-0 flex-column">
@@ -178,6 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+     <script src="assets/scripts/login.js"></script> 
     <script src="assets/scripts/app.js"></script>
 </body>
 

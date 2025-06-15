@@ -689,3 +689,52 @@ body {
 .favorite-icon.favoritado {
     color: var(--cor-principal2);
 }
+
+/* --- Estilos da Página de Login --- */
+
+/* Garante que o conteúdo principal ocupe toda a altura disponível */
+.login-page-main {
+    flex-grow: 1;
+}
+
+/* Card principal com sombra e bordas arredondadas */
+.login-card {
+    background-color: var(--cor-escura3);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--cor-escura2);
+}
+
+/* Título do card de login */
+.login-card h3 {
+    color: var(--cor-principal2); /* Usa a cor de destaque do tema */
+    font-weight: bold;
+}
+
+/* Labels dos campos do formulário */
+.login-card .form-label {
+    color: var(--cor-texto2);
+}
+
+/* Link para criar conta */
+.create-account-link {
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.create-account-link:hover {
+    color: var(--cor-texto);
+    text-decoration: underline;
+}
+
+/* Conteúdo do Modal de Cadastro */
+.modal-content-custom {
+    background-color: var(--cor-escura1);
+    border: 1px solid var(--cor-escura2);
+}
+
+.modal-title{
+    color: var(--cor-principal2);
+}

@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDFlix - Detalhes do Filme</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Estilo adicional para o ícone de favorito na página de detalhes */
+        #filme-titulo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        #favorite-icon-detalhes {
+            font-size: 2rem; /* Tamanho maior para destaque */
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column">
@@ -25,29 +35,32 @@
                         class="fa fa-times-circle"></i></label>
                 <ul class="d-flex m-0 p-0">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
+                    <li id="nav-favoritos" class="d-none"><a href="favoritos.html">Favoritos</a></li>
+                    <li id="nav-cadastro-filmes" class="d-none"><a href="cadastro_filme.html">Cadastro de Filmes</a></li>
                 </ul>
             </nav>
         </div>
         <div class="end-cabecalho d-flex align-items-center">
-            <form class="busca d-flex flex-nowrap">
-                <input type="search" placeholder="Títulos, gêneros..." class="w-100">
+            <form class="busca d-flex flex-nowrap" id="form-busca">
+                <input type="search" placeholder="Títulos, gêneros..." class="w-100" id="input-busca">
                 <button type="submit"><i class="fa fa-search"></i>
                 </button>
             </form>
-            <div class="login-cadastro d-flex">
-                <a href="#">Login</a>
-                <a href="#">Cadastre-se</a>
+            <div id="user-menu" class="login-cadastro d-flex align-items-center">
+                <a href="login.html">Login</a>
+                <a href="login.html" class="btn-cadastrar-menu">Cadastre-se</a>
             </div>
         </div>
-
     </header>
-    <main class="main d-flex justify-content-center">
 
+    <main class="main d-flex justify-content-center">
         <div class="container-detalhes-filme d-flex flex-column" id="detalhes-filme-container">
             <section class="d-flex align-items-center flex-column align-items-md-start flex-md-row">
                 <div class="esquerda-container d-flex flex-column p-3">
-                    <h1 id="filme-titulo"></h1>
+                    <div id="filme-titulo-container">
+                        <h1 id="filme-titulo"></h1>
+                        <i id="favorite-icon-detalhes" class="fa-solid fa-heart"></i>
+                    </div>
                     <p id="filme-detalhes"></p>
                     <img id="filme-banner" src="" alt="Imagem do Filme" class="img-fluid" />
                 </div>
@@ -69,9 +82,37 @@
             </section>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
+
+    <footer class="rodape d-flex flex-column gap-5">
+        <div class="container-rodape d-flex flex-column flex-md-row align-items-center">
+            <img src="assets/img/CDFLIX.png" alt="">
+            <div class="conteudo-rodape d-flex justify-content-between flex-column">
+                <div class="redes-sociais d-flex">
+                    <a href="https://github.com/vitorRoma06" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vitordroma/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <nav class="menu-rodape">
+                    <ul class="d-flex p-0 flex-column">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="autoria h-100">
+                <h5 class="pb-1">Autoria</h5>
+                <p>Aluno: <span class="fw-normal">Vitor de Roma Honório</span></p>
+                <p>Curso: <span class="fw-normal">Engenharia de Software</span></p>
+                <p>Turma: <span class="fw-normal">Noite</span></p>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>&copy; 2025 CDFlix. Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/scripts/login.js"></script>
     <script src="assets/scripts/app.js"></script>
 </body>
 
